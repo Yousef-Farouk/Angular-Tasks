@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ElementRef  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormComponent {
 
+  constructor(private elementRef: ElementRef) { }
+
+  name_valid:string = ''
+  name_flag :boolean =false
+  age_valid:string = ''
+  age_flag :boolean =false
   id : number = 0
   studentname : string = ' '
   studentage : string = ' '
@@ -29,16 +35,39 @@ export class FormComponent {
 
   addStudent()
   {
-    if (this.studentname == ''  )
+    if (Number(this.studentage) < 18)
     {
-        
+      this.age_flag= true
+      this.age_valid = 'age is required and should be more than 18 '
     }
-    this.studentlist.push({
-      id: ++this.id,
-      name : this.studentname,
-      age : this.studentage,
-    })
+    if (this.studentname.length == 0 ){
 
+        this.name_flag= true
+        this.name_valid = 'name is required'
+    }
+    else if (this.studentname.length <=3){
+
+      this.name_flag= true
+      this.name_valid = 'name length shoud be more than 3'
+
+    }
+    else 
+    {
+      this.studentlist.push({
+        id: ++this.id,
+        name : this.studentname,
+        age : this.studentage,
+      })
+
+      this.name_flag=false
+      this.age_flag = false
+    }
+    
+  }
+
+  delete(index:number)
+  {
+    this.studentlist.splice(index,1)
   }
 
 }

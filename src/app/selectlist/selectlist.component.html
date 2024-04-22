@@ -1,0 +1,16 @@
+<select name ="branches" [(ngModel)] = "selectedBranch" (change)="onBranchSelected()">
+
+    @for(branch of branchTrackList ; track branch.branch_name; let i = $index)
+    {
+        <option>{{branch.branch_name}}</option>
+    }
+</select>
+
+
+<div>
+    @for(track of tracks ;track track ; )
+    {
+        
+        <h5 class="p-3">{{track}}</h5>
+    }
+</div>
