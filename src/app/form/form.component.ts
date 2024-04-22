@@ -37,7 +37,7 @@ export class FormComponent {
   {
     this.name_flag = false 
     this.age_flag = false
-    if (parseInt(this.studentage) < 18 || this.studentage == '')
+    if (parseInt(this.studentage) < 18 || this.studentage.length == 0)
     {
       console.log("age checked");
       this.age_flag= true
