@@ -1,0 +1,42 @@
+
+   <div class="container">
+    <div class="row">
+
+      @for(product of products; track product.id;let i = $index)
+      {
+        <div class="col-lg-4">
+          <div class="card custom-card mt-4 mb-4 ms-4 " >
+            <img src="{{product.img}}" class="card-img-top " alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{product.name}}</h5>
+              <h5 class="card-text text-center">{{product.price}}$</h5>
+              <!-- <p class="card-text text-center fs-4 text-bold">{{product.quantity}} in stock</p> -->
+              @if(product.quantity == 0){
+                <p class=" text-center text-danger">out of stock</p>
+                <div class = "text-center">
+                  <a href="#" class="btn btn-primary w-100 disabled">Sold out</a>
+              </div>
+              }
+              @else if(product.quantity == 1 )
+              {
+                <p class=" text-center text-warning ">only one left</p>
+                <div class = "text-center">
+                  <a href="#" class="btn btn-warning w-100 ">Buy Now</a>
+                </div>
+              }
+              @else
+              {
+                <p class=" text-center text-dark ">{{product.quantity}} in stock</p>
+                <div class = "text-center">
+                  <a href="#" class="btn btn-primary w-100 ">Buy Now</a>
+                </div>
+              }
+              
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+   </div>
+   
+    

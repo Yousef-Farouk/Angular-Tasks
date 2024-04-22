@@ -1,0 +1,47 @@
+
+<div>
+    <input
+    [(ngModel)]="studentname"
+    (input)="getName($event)"
+      type="text"
+      name="check"
+      class="form-control mb-3 mt-3"
+      placeholder="Student Name "
+/>
+<span class="text-danger d-none">name is required </span>
+<span class="text-danger d-none">name length should > 3</span>
+</div>
+
+
+<input
+    [(ngModel)]="studentage"
+      (input)="getAge($event)"
+      type="text"
+      name="check"
+      class="form-control mb-3 mt-3 "
+      placeholder="Student Age "
+/>
+
+<button class ="btn btn-primary mt-3 mb-3" (click)=addStudent()>Add Student</button>
+
+<table class="table table-bordered mb-3">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(st of studentlist; track st.id;let i = $index)
+        {
+            <tr>
+                <td>{{st.id}}</td>
+                <td>{{st.name}}</td>
+                <td>{{st.age}}</td>
+                <td><button class ="btn btn-danger ">Delete</button></td>
+            </tr>
+        }
+    </tbody>
+  </table>

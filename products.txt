@@ -1,0 +1,114 @@
+[
+    {
+      "id": "1",
+      "name": "Black Pullover",
+      "pirce": 600,
+      "Category": "clothes",
+      "img": "https://i.ibb.co/bbWK2rw/men-03.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Jeans Jacket",
+      "pirce": 550,
+      "Category": "clothes",
+      "img": "https://i.ibb.co/mh8YHbC/men-02.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Army Jacket",
+      "pirce": 650,
+      "Category": "clothes",
+      "img": "https://i.ibb.co/7G5xwH4/men-01.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Black Shirt",
+      "pirce": 700,
+      "Category": "clothes",
+      "img": "https://i.ibb.co/QvWZGjz/product-7.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Camera",
+      "pirce": 7000,
+      "Category": "electronics",
+      "img": "https://i.ibb.co/P4XYKv2/product-1.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Drone",
+      "pirce": 10000,
+      "Category": "electronics",
+      "img": "https://i.ibb.co/PGGQtBK/product-5.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Smart Watch",
+      "pirce": 2500,
+      "Category": "electronics",
+      "img": "https://i.ibb.co/qJR2Ln4/product-6.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Air Pod",
+      "pirce": 1500,
+      "Category": "electronics",
+      "img": "https://i.ibb.co/Snbj8bH/Wireless-Headphones.png"
+    },
+    {
+      "id": "9",
+      "name": "Wedding rings",
+      "pirce": 5000,
+      "Category": "jewellery",
+      "img": "https://i.ibb.co/zffJ71L/h3-shop-list-5.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Bracelet",
+      "pirce": 8000,
+      "Category": "jewellery",
+      "img": "https://i.ibb.co/592M0tQ/h3-shop-list-6.jpg"
+    },
+    {
+      "id": "11",
+      "name": "Mix Necklace",
+      "pirce": 7500,
+      "Category": "jewellery",
+      "img": "https://i.ibb.co/qkDqk1j/h3-shop-list-new-1.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Spiral Ring",
+      "pirce": 7000,
+      "Category": "jewellery",
+      "img": "https://i.ibb.co/fqkJHwK/h3-shop-list-13.jpg"
+    },
+    {
+      "id": "13",
+      "name": "White Chair",
+      "pirce": 300,
+      "Category": "furniture",
+      "img": "https://i.ibb.co/5TVStbQ/product1-jpg.webp"
+    },
+    {
+      "id": "14",
+      "name": "Backless Chair",
+      "pirce": 450,
+      "Category": "furniture",
+      "img": "https://i.ibb.co/0C1nDWm/product3-jpg.webp"
+    },
+    {
+      "id": "15",
+      "name": "Wood Table",
+      "pirce": 700,
+      "Category": "furniture",
+      "img": "https://i.ibb.co/R3TxH4Z/product4-jpg.webp"
+    },
+    {
+      "id": "16",
+      "name": "Relaxing Chair",
+      "pirce": 850,
+      "Category": "furniture",
+      "img": "https://i.ibb.co/r0bn0n6/product5-jpg.webp"
+    }
+]
