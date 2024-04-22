@@ -35,23 +35,28 @@ export class FormComponent {
 
   addStudent()
   {
-    if (Number(this.studentage) < 18)
+    this.name_flag = false 
+    this.age_flag = false
+    if (parseInt(this.studentage) < 18 || this.studentage == '')
     {
+      console.log("age checked");
       this.age_flag= true
       this.age_valid = 'age is required and should be more than 18 '
     }
     if (this.studentname.length == 0 ){
+
 
         this.name_flag= true
         this.name_valid = 'name is required'
     }
     else if (this.studentname.length <=3){
 
+
       this.name_flag= true
       this.name_valid = 'name length shoud be more than 3'
 
     }
-    else 
+    if(this.name_flag == false && this.age_flag == false)
     {
       this.studentlist.push({
         id: ++this.id,
