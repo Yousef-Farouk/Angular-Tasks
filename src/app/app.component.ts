@@ -15,6 +15,14 @@ import { SelectlistComponent } from './selectlist/selectlist.component';
 })
 export class AppComponent {
   title = 'Project';
+  datafromchild : any 
+
+  getData(x:any)
+  {
+    this.datafromchild = x ;
+    console.log("get data");
+    console.log(this.datafromchild);
+  }
 }
 
 
