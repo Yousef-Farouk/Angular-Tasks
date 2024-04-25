@@ -19,32 +19,45 @@ export class ProductsComponent implements OnInit{
 
   products : Iproduct[] ;
 
+  deletedId : number = 0 ; 
+
   constructor(  
-    public productservice : ProductService,
+    // public productservice : ProductService,
     public router : Router,
     public ActivatedRoute:ActivatedRoute,
-    // public productservice : ProductApiService
+    public productservice : ProductApiService
     ) {
-        // this.products = this.productservice.getAllproducts()
-        this.products = []  
+        //this.products = this.productservice.getAllproducts()
+         this.products = []  
     }
 
   ngOnInit(): void {
 
-    this.products=this.productservice.getAllproducts()
+  //  this.products=this.productservice.getAllproducts()
 
-    // this.productservice.getAllproducts().subscribe({
+    this.productservice.getAllproducts().subscribe({
 
-    //   next:(data)=>{
-    //    this.products = data
-    //    console.log(data);
-    //   },
+      next:(data)=>{
+       this.products = data
+      },
 
-    //   error:(error)=>{
-    //      console.log(error);
-    //   }
+      error:(error)=>{
+         console.log(error);
+      }
 
-    // })  
+    })  
+  }
+
+  getData(x:any){
+
+    console.log("recieved id");
+    this.deletedId = x ;
+
+    if (this.deletedId != 0 )
+    {
+        this.products = this.products.filter((product)=>product.id != this.deletedId)
+    }
+
   }
 
 

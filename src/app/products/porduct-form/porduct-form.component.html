@@ -1,29 +1,42 @@
 <div class="container mt-5">
     <h1 class="my-2 text-muted text-center">
     </h1>
-    <form (submit)=" productHandler()">
+    <form  [formGroup]="productForm"  (submit)=" productHandler()">
       <div class="mb-3">
         <label for="productName" class="form-label">Product Name</label>
-        <!-- formControlName="img" -->
-        <!-- formControlName="price" -->
 
         <input
           type="text"
-          [(ngModel)]="name"
           name="productName"
+          formControlName="name"
           class="form-control"
           id="productName"
-          aria-describedby="emailHelp"
+          aria-describedby="nameHelp"
           placeholder="Enter Product Name"
           formControlName="name"
         />
 
-        <!-- <ng-container   ></ng-container> -->
+        <ng-container *ngIf="getName.touched">
+          <div
+            *ngIf="getName.hasError('required')"
+            id="nameHelp"
+            class="form-text text-danger"
+          >
+            Product Name is Required
+          </div>
+          <div
+            *ngIf="getName.hasError('minlength')"
+            id="nameHelp"
+            class="form-text text-danger"
+          >
+            Product Name Length must be > 3
+          </div>
+        </ng-container>
       </div>
       <div class="mb-3">
         <label for="price" class="form-label">Price</label>
         <input
-          [(ngModel)]="price"
+          formControlName="price"
           type="number"
           name="price"
           class="form-control"
@@ -31,24 +44,43 @@
           placeholder="Enter Product Price"
 
         />
+        <ng-container *ngIf="getPrice.touched">
+          <div
+            *ngIf="getName.hasError('required')"
+            id="priceHelp"
+            class="form-text text-danger"
+          >
+            Price Name is Required
+          </div>
+        </ng-container>
       </div>
       <div class="mb-3">
         <label for="quantity" class="form-label">Quantity</label>
         <input
-          [(ngModel)]="quantity"
+          formControlName="quantity"
           name="quantity"
           type="number"
           class="form-control"
           id="quantity"
           placeholder="Enter Product Quantity"
           formControlName="quantity"
-
         />
+        
+        <ng-container *ngIf="getQuantity.touched">
+          <div
+            *ngIf="getName.hasError('required')"
+            id="quantity"
+            class="form-text text-danger"
+          >
+            Quantity is Required
+          </div>
+        </ng-container>
+
       </div>
   
       <div class="mb-3">
         <label class="form-label" for="image">Image</label>
-        <input name="image" type="file" class="form-control" id ="image" placeholder ="Choose Image"  [(ngModel)]="img" (change)="onFileSelected($event)"/>
+        <input name="image" type="file" class="form-control" id ="image" placeholder ="Choose Image"  formControlName="img" (change)="onFileSelected($event)"/>
       </div>
 
       <!-- <button type="submit" class="btn btn-success mb-5 ">{{productId == 0 ? "Add Product" : "Edit Product"}} </button> -->

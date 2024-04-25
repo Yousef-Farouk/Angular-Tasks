@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductApiService {
 
-  baseUrl:string = "https://yousef-farouk.github.io/E-commerce-Api/Products.json"
+  baseUrl:string = "http://localhost:3000/products"
   constructor(private http:HttpClient) {
 
   }
@@ -18,12 +18,12 @@ export class ProductApiService {
     return this.http.get<Iproduct[]>(this.baseUrl)
   }
 
-  getProductById(productId :number){
+  getProductByid(productId :number){
 
     return this.http.get(`${this.baseUrl}/${productId}`)
   }
 
-  addNewProduct(product :Iproduct){
+  addNewProduct(product :any){
 
     return this.http.post(`${this.baseUrl}`,product)
 

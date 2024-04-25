@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <app-product-items
+      (idContent)="getData($event)"
       *ngFor="let myproduct of products"
       [product]="myproduct"
       class="col-lg-4"
