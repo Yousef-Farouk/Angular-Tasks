@@ -18,7 +18,7 @@ export class ProductService {
     return this.products ;
   }
 
-  getProductByid(productId:number):Iproduct|undefined{
+  getProductByid(productId:number){
 
     return this.products.find((product) => product.id == productId)
   }

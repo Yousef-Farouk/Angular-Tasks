@@ -1,14 +1,16 @@
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { productList } from '../../models/productList';
 import { Iproduct } from '../../models/iproduct';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-porduct-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule,ReactiveFormsModule],
   templateUrl: './porduct-form.component.html',
   styleUrl: './porduct-form.component.css'
 })
@@ -18,6 +20,15 @@ export class PorductFormComponent implements OnInit {
   quantity : any  
   price : any
   img : string | ArrayBuffer | null = null;
+
+  // productForm = new FormGroup(){
+
+  //   name = new FormControl('',[Validators.required,Validators.minLength(3)]),
+  //   quantity = new FormGroup(null,[Validators.required]),
+  //   price = new FormGroup(null,[Validators.required]),
+  //   img = new FormGroup(null,[Validators.required])
+
+  // }
 
   productId : number = 0 
   product : any
@@ -94,6 +105,7 @@ export class PorductFormComponent implements OnInit {
     }
     else {
 
+      console.log("editing");
       this.editProduct()
     }
 

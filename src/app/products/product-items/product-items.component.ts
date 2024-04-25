@@ -1,3 +1,4 @@
+import { ProductApiService } from './../../services/product-api.service';
 import { productList } from './../../models/productList';
 import { Router, ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { ProductService } from './../../services/product.service';
@@ -16,22 +17,28 @@ export class ProductItemsComponent implements OnInit {
 
   products : Iproduct[]
   productId : number = 0
+
+  
+
   constructor(
-    public productservice : ProductService,
+    public productservice: ProductService,
     public router : Router,
-    public ActivatedRoute:ActivatedRoute
+    public ActivatedRoute :ActivatedRoute,
+    //public productservice : ProductApiService
   ) {
       this.products = []
   }
 
   ngOnInit(): void {
    
-    this.products = this.productservice.getAllproducts();
+  this.products = this.productservice.getAllproducts();
+
+
     
   }
 
-
   delete(id : number){
+
     this.products = this.productservice.deleteProduct(id)
     this.router.navigate(['/products'])
     console.log(this.products);

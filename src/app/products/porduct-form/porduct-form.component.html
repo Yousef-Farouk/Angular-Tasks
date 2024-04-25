@@ -3,45 +3,58 @@
     </h1>
     <form (submit)=" productHandler()">
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Product Name</label>
+        <label for="productName" class="form-label">Product Name</label>
+        <!-- formControlName="img" -->
+        <!-- formControlName="price" -->
+
         <input
-         [(ngModel)]="name"
           type="text"
+          [(ngModel)]="name"
           name="productName"
           class="form-control"
-          id="exampleInputEmail1"
+          id="productName"
           aria-describedby="emailHelp"
           placeholder="Enter Product Name"
+          formControlName="name"
         />
+
+        <!-- <ng-container   ></ng-container> -->
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Price</label>
+        <label for="price" class="form-label">Price</label>
         <input
-         [(ngModel)]="price"
+          [(ngModel)]="price"
           type="number"
           name="price"
           class="form-control"
-          id="exampleInputPassword1"
+          id="price"
           placeholder="Enter Product Price"
+
         />
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword6" class="form-label">Quantity</label>
+        <label for="quantity" class="form-label">Quantity</label>
         <input
           [(ngModel)]="quantity"
           name="quantity"
           type="number"
           class="form-control"
-          id="exampleInputPassword6"
+          id="quantity"
           placeholder="Enter Product Quantity"
+          formControlName="quantity"
+
         />
       </div>
   
       <div class="mb-3">
         <label class="form-label" for="image">Image</label>
-        <input name="image" type="file" class="form-control" id ="image" placeholder ="Choose Image" [(ngModel)]="img" (change)="onFileSelected($event)"/>
+        <input name="image" type="file" class="form-control" id ="image" placeholder ="Choose Image"  [(ngModel)]="img" (change)="onFileSelected($event)"/>
       </div>
-      <button type="submit" class="btn btn-success mb-5 ">{{productId == 0 ? "Add Product" : "Edit Product"}}</button>
+
+      <!-- <button type="submit" class="btn btn-success mb-5 ">{{productId == 0 ? "Add Product" : "Edit Product"}} </button> -->
+      <button type="submit" class="btn btn-success mb-5 "> Add Product </button>
+
+
     </form>
   </div>
   
