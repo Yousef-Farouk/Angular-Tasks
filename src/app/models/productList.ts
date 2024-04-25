@@ -3,7 +3,7 @@ import { Iproduct} from "./iproduct";
 export const productList : Iproduct [] = [
 
     {
-        id: "1",
+        id: 1,
         name: "Black Pullover",
         price: 600,
         Category: "clothes",
@@ -11,7 +11,7 @@ export const productList : Iproduct [] = [
         quantity: 5
       },
       {
-        id: "2",
+        id: 2,
         name: "Jeans Jacket",
         price: 550,
         Category: "clothes",
@@ -19,7 +19,7 @@ export const productList : Iproduct [] = [
         quantity: 0
       },
       {
-        id: "3",
+        id: 3,
         name: "Army Jacket",
         price: 650,
         Category: "clothes",
@@ -27,7 +27,7 @@ export const productList : Iproduct [] = [
         quantity: 1
       },
       {
-        id: "4",
+        id: 4,
         name: "Black Shirt",
         price: 700,
         Category: "clothes",
@@ -35,7 +35,7 @@ export const productList : Iproduct [] = [
         quantity: 0
       },
       {
-        id: "5",
+        id: 5,
         name: "Camera",
         price: 7000,
         Category: "electronics",
@@ -43,7 +43,7 @@ export const productList : Iproduct [] = [
         quantity: 0
       },
       {
-        id: "6",
+        id: 6,
         name: "Drone",
         price: 10000,
         Category: "electronics",

@@ -1,15 +1,11 @@
-
-          <div class="product-item card custom-card mt-4 mb-4 ms-4 " >
+<div class="container">
+    <div class="col-lg-4">
+        <div class="product-item card custom-card mt-4 mb-4 ms-4 " >
             <div class="product-img position-relative overflow-hidden">
-              <img src="{{product.img}}" class="card-img-top " alt="...">
-              <div class="product-action">
-                <a class="btn btn-outline-dark btn-square cart_button" ><i class="mx-1 fs-5 text-warning bi bi-eye-fill" [routerLink]="['/products',product.id]"></i></a>
-                <a class="btn btn-outline-dark btn-square" ><i class="mx-1 fs-5 text-warning bi bi-pencil-square" [routerLink]="['/products',product.id,'edit']"></i></a>
-                <a class="btn btn-outline-dark btn-square" > <i class="mx-1 fs-5 text-danger bi bi-trash3-fill"  (click)="delete(product.id)" ></i></a>
-              </div>
+              <img src="{{product.img}}" class="card-img-top w-100 h-100 " alt="...">
             </div>
             <div class="card-body">
-              <h5 class="card-title text-center">{{product.name}}</h5>
+              <h5 class="card-title text-center">"Name:"{{product.name}}</h5>
               <h5 class="card-text text-center">{{product.price}}$</h5>
               <!-- <p class="card-text text-center fs-4 text-bold">{{product.quantity}} in stock</p> -->
               @if(product.quantity == 0){
@@ -22,17 +18,22 @@
               {
                 <p class=" text-center text-warning ">only one left</p>
                 <div class = "text-center">
-                  <a href="#" class="btn btn-warning w-100 ">Buy Now</a>
+                  <a href="#" class="btn btn-warning w-100 " >Buy Now</a>
                 </div>
               }
               @else
               {
                 <p class=" text-center text-dark ">{{product.quantity}} in stock</p>
                 <div class = "text-center">
-                  <a href="#" class="btn btn-primary w-100 ">Buy Now</a>
+                  <a href="#" class="btn btn-primary w-100 " >Buy Now</a>
                 </div>
               }
               
             </div>
-          </div>   
+          </div> 
+
+          <button class="btn btn-success mb-3 mt-3" (click)="backToProducts()">Back To Product</button>
+    </div>
     
+</div>
+  

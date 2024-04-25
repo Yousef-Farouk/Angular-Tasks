@@ -18,7 +18,7 @@ export class ProductService {
     return this.products ;
   }
 
-  getProductByid(productId:string):Iproduct|undefined{
+  getProductByid(productId:number):Iproduct|undefined{
 
     return this.products.find((product) => product.id == productId)
   }
@@ -29,9 +29,9 @@ export class ProductService {
     return this.products;
   }
 
-  deleteProduct(productId : string)
+  deleteProduct(productId : number)
   {
-    this.products = this.products.filter((product)=> productId == product.id)
+    this.products = this.products.filter((product)=> productId != product.id)
     return this.products
   }
 
@@ -39,8 +39,4 @@ export class ProductService {
   {
     
   }
-
-
-
-
 }

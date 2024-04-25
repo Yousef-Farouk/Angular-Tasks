@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { ProductService } from './../services/product.service';
+import { Component, OnInit } from '@angular/core';
 import { ProductItemsComponent } from './product-items/product-items.component';
 import { Iproduct } from '../models/iproduct';
 import { productList} from '../models/productList';
 import { CommonModule } from '@angular/common';
+import { Router,RouterLink,RouterLinkActive,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -13,9 +15,21 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductsComponent {
 
-  products : Iproduct[] = []
+  products : Iproduct[] ;
 
-  constructor() {
-    this.products = productList  
-  }
+  constructor(  
+    public productservice : ProductService,
+    public router : Router,
+    public ActivatedRoute:ActivatedRoute,
+    ) {
+        this.products = this.productservice.getAllproducts()
+    }
+
+  // ngOnInit(): void {
+  //   this.products = this.productservice.getAllproducts()
+  //this.products =productItemsComponent.products
+
+  // }
+
+
 }

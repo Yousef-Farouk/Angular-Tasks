@@ -1,10 +1,11 @@
 <div class="container mt-5">
     <h1 class="my-2 text-muted text-center">
     </h1>
-    <form >
+    <form (submit)=" productHandler()">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Product Name</label>
         <input
+         [(ngModel)]="name"
           type="text"
           name="productName"
           class="form-control"
@@ -16,6 +17,7 @@
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Price</label>
         <input
+         [(ngModel)]="price"
           type="number"
           name="price"
           class="form-control"
@@ -26,6 +28,7 @@
       <div class="mb-3">
         <label for="exampleInputPassword6" class="form-label">Quantity</label>
         <input
+          [(ngModel)]="quantity"
           name="quantity"
           type="number"
           class="form-control"
@@ -34,8 +37,11 @@
         />
       </div>
   
-      <button type="submit" class="btn btn-success">
-      </button>
+      <div class="mb-3">
+        <label class="form-label" for="image">Image</label>
+        <input name="image" type="file" class="form-control" id ="image" placeholder ="Choose Image" [(ngModel)]="img" (change)="onFileSelected($event)"/>
+      </div>
+      <button type="submit" class="btn btn-success mb-5 ">{{productId == 0 ? "Add Product" : "Edit Product"}}</button>
     </form>
   </div>
   
